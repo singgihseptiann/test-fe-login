@@ -4,7 +4,7 @@ import { SidebarToggle } from "./components/header.toggle";
 
 export function Header() {
   return (
-    <header className="flex h-16 items-center justify-between border-b bg-white px-4 shadow-sm">
+    <header className="sticky top-0 flex h-16 items-center justify-between border-b bg-white px-4 shadow-sm">
       <div className="flex items-center gap-4">
         <SidebarToggle />
         <HeaderTitle headerTitle="Dashboard" />

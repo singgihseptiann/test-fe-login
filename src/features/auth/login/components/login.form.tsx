@@ -22,6 +22,7 @@ export function LoginForm() {
     isSubmitting,
     showPassword,
     togglePasswordVisibility,
+    error,
   } = useLoginForm();
 
   return (
@@ -62,9 +63,9 @@ export function LoginForm() {
                     onClick={togglePasswordVisibility}
                   >
                     {showPassword ? (
-                      <EyeOff className="text-gray-400 cursor-pointer" />
+                      <EyeOff className="cursor-pointer text-gray-400" />
                     ) : (
-                      <Eye className="text-gray-400 cursor-pointer" />
+                      <Eye className="cursor-pointer text-gray-400" />
                     )}
                   </button>
                 </div>
@@ -74,10 +75,26 @@ export function LoginForm() {
           )}
         />
 
+        {error && (
+          <div className="rounded-md bg-red-50 p-4">
+            <div className="flex">
+              <div className="ml-3">
+                <h3 className="text-sm font-medium text-red-800">
+                  Login Gagal
+                </h3>
+                <div className="mt-2 text-sm text-red-700">
+                  <p>{error}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Submit Button */}
         <Button
           type="submit"
-          className="focus:ring-opacity-50 w-full bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none active:bg-blue-700 cursor-pointer"
+          className="focus:ring-opacity-50 w-full cursor-pointer bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none active:bg-blue-700"
+          disabled={isSubmitting}
         >
           {isSubmitting ? (
             <Spinner

@@ -1,11 +1,12 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { useLogin } from "./useLogin";
 import { useState } from "react";
+import { useLogin } from "./useLogin";
+import { useForm } from "react-hook-form";
 import { LoginFormValues, loginSchema } from "../schema/login.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export function useLoginForm() {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -25,11 +26,17 @@ export function useLoginForm() {
   const loginMutation = useLogin();
 
   async function onSubmit(data: LoginFormValues) {
+    setError(null);
     try {
-      const response = await loginMutation.mutateAsync(data);
-      return response;
-    } catch (error) {
-      console.error("Login error:", error);
+      await loginMutation.mutateAsync(data);
+    } catch (error: any) {
+      if (error.response?.data?.message) {
+        setError(error.response.data.message);
+      } else if (error.message) {
+        setError(error.message);
+      } else {
+        setError("Login gagal. Silakan coba lagi.");
+      }
     }
   }
 
@@ -39,5 +46,6 @@ export function useLoginForm() {
     isSubmitting: loginMutation.isPending,
     showPassword,
     togglePasswordVisibility,
+    error,
   };
 }

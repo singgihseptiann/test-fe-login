@@ -23,10 +23,17 @@ export function ConfirmationDialog({
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
         <div className="flex justify-end gap-2 pt-4">
-          <Button variant="outline" onClick={onClose}>
+          <Button
+            variant="outline"
+            className="cursor-pointer"
+            onClick={onClose}
+          >
             Cancel
           </Button>
-          <Button className="bg-blue-500 hover:bg-blue-600" onClick={onConfirm}>
+          <Button
+            className="cursor-pointer bg-blue-500 hover:bg-blue-600"
+            onClick={onConfirm}
+          >
             Confirm
           </Button>
         </div>

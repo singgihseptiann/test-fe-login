@@ -19,7 +19,6 @@ export function useLogin() {
 
     onError: (error: any) => {
       console.error("Login error:", error);
-      alert("Login gagal. Periksa data kamu.");
     },
   });
 }
