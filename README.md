@@ -36,9 +36,16 @@ npm install -g pnpm
 
 ## Menjalankan Proyek
 
-1. Setelah menginstall dependensi, kamu bisa menjalankan proyek ini dengan:
+1. Install dependensi proyek dengan perintah:
+
+```bash
+pnpm install
+```
+
+2. Setelah menginstall dependensi, kamu bisa menjalankan proyek ini dengan:
    
 ```bash
 pnpm dev
 ```
-2. Buka **http://localhost:3000** di browser untuk melihat hasilnya.
+
+3. Buka **http://localhost:3000** di browser untuk melihat hasilnya.
