@@ -6,7 +6,7 @@ import { Sidebar } from "./sidebar/sidebar";
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  if (pathname === "/home" || pathname === "/register") {
+  if (pathname === "/" || pathname === "/register") {
     return <>{children}</>;
   }
 

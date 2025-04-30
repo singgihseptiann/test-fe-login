@@ -6,10 +6,9 @@ export function useLogout() {
   const [openDialog, setOpenDialog] = useState(false);
   const router = useRouter();
   const handleLogout = () => {
-    localStorage.removeItem("user_token");
-    localStorage.removeItem("user_role");
-    localStorage.removeItem("user_username");
-    localStorage.removeItem("user_password");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("expired_at");
 
     setOpenDialog(false);
     router.push("/");
