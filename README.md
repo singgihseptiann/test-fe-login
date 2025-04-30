@@ -13,11 +13,12 @@ Ini adalah aplikasi login untuk admin di platform Nusantara Data, dibangun denga
 
 - **Next.js** - Framework React untuk pengembangan aplikasi web.
 - **TypeScript** - Superset JavaScript untuk pengetikan statis.
-- **Shadcn** - Library UI untuk komponen yang stylish dan reusable.
+- **Shadcn** - Library UI untuk komponen yang stylish dan reusable. Shadcn juga mengintegrasikan **Recharts** untuk membuat grafik/chart dengan mudah dalam aplikasi.
 - **Axios** - HTTP client untuk mengirimkan request API.
-- **Tanstack Query** - Library untuk mengelola data fetching dan state dari server.
+- **Tanstack Query** - Library untuk mengelola data fetching **dan mutation** (seperti POST, DELETE, PUT) dengan fitur seperti cache.
 - **Tailwind CSS** - Framework CSS berbasis utility untuk membangun antarmuka yang cepat dan responsif.
 - **Zod** - Library untuk validasi skema data.
+- **Lucide-React** - Library ikon untuk React.
 
 
 ## penggunaan
@@ -35,5 +36,7 @@ npm install -g pnpm
 
 ## Menjalankan Proyek
 
-1. Setelah menginstall dependensi, kamu bisa menjalankan proyek ini dengan: **pnpm dev**
+1. Setelah menginstall dependensi, kamu bisa menjalankan proyek ini dengan: ```bash
+pnpm dev
+```
 2. Buka **http://localhost:3000** di browser untuk melihat hasilnya.
