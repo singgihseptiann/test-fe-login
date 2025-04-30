@@ -1,9 +1,10 @@
+import { ProtectedRoute } from "@/features/protected-route/protected.route";
 import React from "react";
 
 export default function page() {
   return (
-    <div>
+    <ProtectedRoute>
       <h1>Dashboard</h1>
-    </div>
+    </ProtectedRoute>
   );
 }
